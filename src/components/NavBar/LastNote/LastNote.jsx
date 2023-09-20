@@ -1,17 +1,20 @@
-import React from 'react'
-import './LastNote.css'
-import NavBarItem from '../NavBarItem/NavBarItem';
+import React from "react";
+import "./LastNote.css";
+import NavBarItem from "../NavBarItem/NavBarItem";
 
 const lastNotes = [
-    {
-        note: "هدفم برای سال جدید",
-    },
-    {
-        note: "کتاب هایی که میخوام بخونم",
-    },
-    {
-        note: "خلاصه جلسه ۱۲ صدکدرز",
-    }
+  {
+    id: 1,
+    note: "هدفم برای سال جدید",
+  },
+  {
+    id: 2,
+    note: "کتاب هایی که میخوام بخونم",
+  },
+  {
+    id: 3,
+    note: "خلاصه جلسه ۱۲ صدکدرز",
+  },
 ];
 
 function LastNote() {
@@ -21,13 +24,17 @@ function LastNote() {
 
       <div className="last-notes">
         {lastNotes.map((item) => {
-          return <NavBarItem key={item.note} text={item.note} 
-          icon='./src/assets/images/doc.png'
-          />;
+          return (
+            <NavBarItem
+              key={item.note}
+              text={item.note}
+              icon="./src/assets/images/doc.png"
+            />
+          );
         })}
       </div>
     </section>
   );
 }
 
-export default LastNote
+export default LastNote;

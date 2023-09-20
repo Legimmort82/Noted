@@ -1,12 +1,12 @@
 import "./NavBarItem.css";
-function NavBarItem(props,selected,onClick) {
+function NavBarItem({onClick,icon,text,selected}) {
   const style = {
     backgroundColor: selected ? "white" : "#F8EEE2",
   };
   return (
     <div className="nav-bar-item" style={style} onClick={onClick}>
-      <img src={props.icon} className="docicon" />
-      {props.text}
+      <img src={icon} className="docicon" />
+      {text}
     </div>
   );
 }

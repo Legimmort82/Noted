@@ -1,5 +1,5 @@
 
-function CardsItem({color,selected,title,description,date,onClick}) {
+function CardsItem({color ,selected ,title ,description ,date ,onClick}) {
     const style={
         borderColor: color,
         backgroundColor: selected ? "white" : "#fcf1e3",
