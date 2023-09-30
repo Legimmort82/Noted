@@ -1,4 +1,4 @@
-import "./NavBarItem.css";
+import "@/components/NavBar/Navbar.css";
 function NavBarItem({onClick,icon,text,selected}) {
   const style = {
     backgroundColor: selected ? "white" : "#F8EEE2",

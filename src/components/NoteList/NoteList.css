@@ -8,3 +8,48 @@
     font-size: 20px;
     padding: 30px 0px;
 }
+.card-notess{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.card-note{
+    background-color: #FCF1E3;
+    width: 88%;
+    padding: 20px;
+    border-radius: 4px;
+    border-right: 4px solid #4C86A8;
+    align-items: center;
+    
+}
+.card-note-1{
+    background-color: #fff;
+    width: 310px;
+    padding: 20px;
+    border-radius: 4px;
+    border-right: 4px solid  #38A3A5;
+    align-items: center;
+
+}
+.descrip{
+    display: flex;
+    justify-content: space-between;
+}
+.title-card{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.descrip-mtn{
+    color: #595550;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    margin: 0;
+}
+
+.year {
+    color: #A9957B;
+    margin: 0;
+}

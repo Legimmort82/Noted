@@ -1,29 +1,74 @@
-.Note{
-    width: 50%;
-    /* height: 100vh; */
-    background: #F8EEE2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Note {
+  width: 50%;
+  /* height: 100vh; */
+  background: #f8eee2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.CenterContent{
-    padding: 50px;
-    width: 100%;
-    /* height: 100%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.NoteEmpty {
+  width: 50%;
+  background: #f8eee2;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 }
-.bigimg{
-    width: 80px;
-    height: 80px;
+.content {
+  color: #000;
+  text-align: right;
+  font-family: estedad;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  background-color:#f8eee2 ;
+  border: none;
+
+  flex-grow: 1;
 }
-p{
-    margin: 0px;
-    margin-top: 10px;
-    font-size: 16px;
+.CenterContent {
+  padding: 50px;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.Title{
-    font-size: 28px;
+.bigimg {
+  width: 80px;
+  height: 80px;
+}
+p {
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.Title {
+  font-size: 28px;
+}
+.foldericon {
+  height: 20px;
+  width: 20px;
+}
+h1 {
+  font-size: 24px;
+}
+.headerempty {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.details {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.detail-r,
+.detail-l {
+  font-size: 14px;
+  align-items: center;
+  gap: 12px;
+  display: flex;
 }

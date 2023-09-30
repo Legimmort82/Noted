@@ -1,5 +1,5 @@
-import "./More.css";
-import NavBarItem from "../NavBarItem/NavBarItem";
+import "@/components/NavBar/Navbar.css";
+import NavBarItem from "./NavBarItem";
 
 const more = [
   {

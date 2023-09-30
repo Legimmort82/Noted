@@ -1,6 +1,6 @@
 import React from "react";
 import "./NoteList.css";
-import Cards from './Cards/Cards';
+import Cards from './Cards';
 function NoteList() {
   return (
     <div className="NoteList">

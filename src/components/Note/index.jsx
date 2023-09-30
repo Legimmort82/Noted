@@ -1,16 +1,23 @@
-import React from 'react'
-import './Note.css'
+import EmptyNote from "./EmptyNote";
+import NoteForm from "./NoteForm";
+import "./Note.css";
+import { useContext } from "react";
+import { noteProvide } from "@/providers/NoteProvider";
 function Note() {
+  const { selectedNoteId, notes,updateNote } = useContext(noteProvide);
+  const selectedNote = notes.find((n) => n.id === selectedNoteId);
+  console.log(selectedNote);
   return (
-    <div className='Note'>
-      <div className="CenterContent">
-        <img src="./src/assets/images/Big.png" alt="" className='bigimg' />
-        <p className='Title'>یک یادداشت را برای نمایش انتخاب کنید</p>
-        <p>از لیست سمت راست یک يادداشت را انتخاب کنید، یا یک یادداشت جدید </p>
-        <span>ایجاد کنید</span>
-      </div>
-    </div>
-  )
+    <>
+      {selectedNoteId === 0 ? (
+        <EmptyNote />
+      ) : selectedNote ? (
+        <EmptyNote note={selectedNote} onUpdate={(value)=>updateNote(value)}/>
+      ) : (
+        <NoteForm />
+      )}
+    </>
+  );
 }
 
-export default Note
+export default Note;

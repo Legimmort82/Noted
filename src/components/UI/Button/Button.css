@@ -1,0 +1,13 @@
+.button-color--green{
+    color: rgba(0, 253, 0, 0.787);
+    /* background-color: rgb(37, 242, 126); */
+}
+.button-color--red{
+    color: red;
+    /* background-color: rgb(173, 117, 117); */
+}
+.button-color{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
