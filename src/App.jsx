@@ -1,15 +1,15 @@
 import './App.css'
 import NavBar from './components/NavBar'
-import Note from './components/Note'
 import NoteList from './components/NoteList'
 import { NoteProvider } from './providers/NoteProvider'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
     <NoteProvider>
     <NavBar/>
     <NoteList/>
-    <Note/>
+    <Outlet/>
     </NoteProvider>
   )
 }
