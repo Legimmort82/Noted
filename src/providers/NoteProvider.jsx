@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 const noteProvide = createContext();
 const initialNotes = [
   {
@@ -50,28 +51,43 @@ const initialNotes = [
   },
 ];
 const NoteProvider = ({ children }) => {
-  const [notes, setNotes] = useState(initialNotes);
-  const [selectedNoteId, setSelectedNoteId] = useState(null);
+  const { noteId } = useParams();
+  const navigate = useNavigate();
+  const [notes, setNotes] = useState(() => {
+    const localData = localStorage.getItem("noted-save");
+    return localData ? JSON.parse(localData) : initialNotes;
+  });
 
-  const updateNote = (newDescription) => {
+  const updateNote = (key, newValue) => {
+    if (noteId == 0) {
+      const newNote = {
+        id: notes.length + 1,
+        [key]: newValue,
+        date: new Date().toLocaleDateString("fa-IR", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+        color: "#38A3A5",
+      };
+      setNotes([...notes, newNote]);
+      localStorage.setItem("noted-save", JSON.stringify([...notes, newNote]));
+      navigate(`/note/${newNote.id}`);
+      return;
+    }
     const newNotes = notes.map((item) => {
-      if (item.id !== selectedNoteId) {
+      if (item.id != noteId) {
         return item;
       }
-      item.description = newDescription;
+      item[key] = newValue;
       return item;
     });
     setNotes(newNotes);
-  };
-  const handleCreateNote = () => {
-    setSelectedNoteId(selectedNoteId === 0 ? null : 0);
+    localStorage.setItem("noted-save", JSON.stringify(newNotes));
   };
   const value = {
     updateNote,
-    selectedNoteId,
-    setSelectedNoteId,
     notes,
-    handleCreateNote,
   };
   return <noteProvide.Provider value={value}>{children}</noteProvide.Provider>;
 };

@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
 import "@/components/NavBar/NavBar.css";
 import NavBarItem from "./NavBarItem";
+import doc from "@/assets/images/doc.png";
+import { useContext } from "react";
 import { noteProvide } from "@/providers/NoteProvider";
-
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LastNote() {
-  const {notes}= useContext(noteProvide)
-  const lastNotes = notes.slice(-3)
+  const { notes } = useContext(noteProvide);
+  const { noteId } = useParams();
+  const lastNotes = notes.slice(-3);
   return (
     <section className="last-note-container">
       <h5>آخرین یادداشت‌ها</h5>
@@ -14,11 +17,13 @@ function LastNote() {
       <div className="last-notes">
         {lastNotes.map((item) => {
           return (
-            <NavBarItem
-              key={item.id}
-              text={item.title}
-              icon="./src/assets/images/doc.png"
-            />
+            <Link to={`/note/${item.id}`} key={item.id}>
+              <NavBarItem
+                text={item.title}
+                icon={doc}
+                selected={item.id == noteId}
+              />
+            </Link>
           );
         })}
       </div>

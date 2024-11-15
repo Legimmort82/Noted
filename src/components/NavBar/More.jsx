@@ -1,5 +1,7 @@
 import "@/components/NavBar/Navbar.css";
 import NavBarItem from "./NavBarItem";
+import favorite from "@/assets/images/favorite.png"
+import deleted from "@/assets/images/delete.png"
 
 const more = [
   {
@@ -23,8 +25,8 @@ function More() {
               text={item.name}
               icon={
                 index === 0
-                  ? "./src/assets/images/favorite.png"
-                  : "./src/assets/images/delete.png"
+                  ? {favorite}
+                  : {deleted}
               }
             />
           );

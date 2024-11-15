@@ -1,7 +1,9 @@
+import "@/components/NavBar/Navbar.css";
 import { useEffect, useState } from "react";
 import NavBarItem from "./NavBarItem";
-import "@/components/NavBar/Navbar.css";
 import Button from "@/components/UI/Button";
+import addfolderimg from "@/assets/images/addfolder.png"
+import folderimg from "@/assets/images/folder.png"
 
 const Folderss = [
   {
@@ -61,6 +63,7 @@ function Folder() {
       setTimeout(()=>{
         document.body.addEventListener("click", handleFolder);
       })
+      console.log(addfolder);
     }
     return () => {
       document.body.removeEventListener("click", handleFolder);
@@ -77,12 +80,12 @@ function Folder() {
           id=""
           onClick={addfolderbtn}
         >
-          <img src="./src/assets/images/addfolder.png" className="addf" />
+          <img src={addfolderimg} className="addf" />
         </button>
       </header>
       {addfolder && (
         <form className="nav-bar-folder">
-          <img src="./src/assets/images/folder.png" className="docicon" />
+          <img src={folderimg} className="docicon" />
           <input
             type="text"
             name=""
@@ -97,8 +100,6 @@ function Folder() {
           <Button onClick={canceladdfolder} variant="red">
             cancel
           </Button>
-          {/* <button onClick={okfolder}>ok</button>
-          <button onClick={canceladdfolder}>cancel</button> */}
         </form>
       )}
 
@@ -110,7 +111,7 @@ function Folder() {
               text={item.name}
               selected={item.id === selected}
               onClick={() => setSelected(item.id)}
-              icon="./src/assets/images/folder.png"
+              icon={folderimg}
             />
           );
         })}
