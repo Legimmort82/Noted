@@ -52,6 +52,7 @@ const initialNotes = [
 ];
 const NoteProvider = ({ children }) => {
   const { noteId } = useParams();
+  console.log(noteId);
   const navigate = useNavigate();
   const [notes, setNotes] = useState(() => {
     const localData = localStorage.getItem("noted-save");
